@@ -5,9 +5,11 @@ metadata:
   labels:
     app: minio
 spec:
-  ports:
-  - port: 9000
-    name: service
-  clusterIP: None
   selector:
     app: minio
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
+  loadBalancerIP: 78.11.24.19
+  type: LoadBalancer

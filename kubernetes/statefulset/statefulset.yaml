@@ -7,7 +7,7 @@ spec:
     matchLabels:
       app: minio # has to match .spec.template.metadata.labels
   serviceName: "minio"
-  replicas: 1 # by default is 1
+  replicas: 2 # by default is 1
   template:
     metadata:
       labels:
@@ -29,7 +29,7 @@ spec:
       name: data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "my-storage-class"
+      # storageClassName: "my-storage-class"
       resources:
         requests:
           storage: 1Gi
